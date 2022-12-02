@@ -1,4 +1,3 @@
-import { Cliente } from "./Cliente.js"
 import { Conta } from "./Conta.js";
 
 // colorcar underline "_" no início do nome do atributo representa que este é privado
@@ -13,10 +12,6 @@ export class ContaCorrente extends Conta {
 
    sacar(valor) {
       let taxa = 1.1;
-      const valorSacado = taxa * valor;
-      if (this._saldo >= valorSacado) {
-         this._saldo -= valorSacado;
-         return valorSacado;
-      }
+      return this._sacar(valor, taxa);
    }
 }
